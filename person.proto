@@ -23,13 +23,13 @@ message SameName {
 }
 
 /*
-    什么时候需要用到 bytes 类型？（已知用于定义和处理二进制数据） c++一样
-    bytes类型在处理字符串时与string的区别？   string
+    什么时候需要用到 bytes 类型？（已知用于定义和处理二进制数据） =====> 在C++中一样
+    bytes类型在处理字符串时与string的区别？   =====> C++中尽量使用string
     编号的意义？
-        为什么枚举编号从0开始而结构体编号从1开始？
-    怎么改成cmake？
-    对于pb.cc和pb.h的掌握程度？
+        为什么枚举编号从0开始而结构体编号从1开始？   ======> 规定，无需纠结
+    怎么改成cmake？     ====> 一般直接改别人的cmake
+    对于pb.cc和pb.h的掌握程度？    =====> 根据需求来
     SerializeToString() ; ParseFromString() ; 
-    google::protobuf::ShutdownProtobufLibrary(); 哪来的？
+    google::protobuf::ShutdownProtobufLibrary(); 哪来的？     ======> 总库，且shutdown用的少，掌握序列化和反序列化即可。
     
 */
