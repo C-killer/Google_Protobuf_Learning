@@ -6,8 +6,12 @@ C++中关于protobuf的学习
    在极其特殊的情况下通过protobuf创建两个名称相同的类（person和info），并采取作用域标识以示区分。
 该项目简单地实现了一个对象“创建初始化 - 赋值 - 序列化 - 传输 - 反序列化 - 得到原始数据”的全过程
 同时，记录了相关问题和编译方法
-   1.1 使用 "protoc --cpp_out=. ./person.proto" 生成对应的pb.h和pb.cc文件
-   1.2 
+
+   1.1 通过 "protoc --cpp_out=. ./person.proto" 编译proto文件生成对应的pb.h和pb.cc文件
+
+   1.2 在main函数中的主要流程为下 ： 创建对象 - 序列化对象 - （数据传输） - （数据接收） - 反序列化对象 - 得到原始数据
+
+   1.3 通过 "g++ -o main main.cpp info.pb.cc person.pb.cc -lprotobuf" 编译main文件生成可执行文件
 
 
 3. protobuf service
