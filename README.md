@@ -19,6 +19,13 @@ C++中关于protobuf的学习
 
 
 
-3. protobuf service
+2. protobuf service
+   
+   2.1 利用gRPC简单实现了peotobuf service框架，用户端和服务端简单的信息交互。
 
-   利用grpc简单实现了peotobuf service框架，用户端和服务端简单的信息交互。
+   2.2 使用gRPC和Protocol Buffers定义了一个包含登录和注册功能的用户服务（UserServiceRPC）。
+
+   
+
+
+
