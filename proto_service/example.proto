@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package example;
+/*
+    service 定义一个服务，这是 gRPC 中的核心概念。一个服务包含多个 RPC 方法。
+*/
+service MyService {   //服务定义
+    /* 
+        定义一个远程过程调用RPC（Remote Procedure Call）
+        这里定义了一个具体的 RPC 方法，客户端可以调用该方法
+        SayHello 是定义的 RPC 方法名
+        returns 指定 RPC 方法的返回类型
+        SayHello 方法接收 HelloRequest 类型的参数并返回 HelloReply 类型的响应。
+    */
+    rpc SayHello (HelloRequest) returns (HelloReply); 
+}
+  
+message HelloRequest {    //消息定义
+    string name = 1;
+}
+  
+message HelloReply {    //消息定义
+    string message = 1;
+}
+  
