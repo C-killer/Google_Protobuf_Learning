@@ -1,0 +1,41 @@
+syntax = "proto3";
+
+package RPC;
+
+
+//结果（失败类）
+message ResultCode {
+    int32 errcode = 1;
+    string errmsg = 2;
+}
+
+//登陆request
+message LoginRequest {
+    string name = 1;    //用户名
+    string pwd = 2;     //密码
+}
+
+//登陆response
+message LoginResponse {
+    ResultCode result = 1;
+    bool success = 2;    //判断登陆成功or失败
+}
+
+//注册request
+message RegisterRequest {
+    int32 id = 1;       //账号
+    string name = 2;    //用户名
+    string pwd = 3;     //密码
+}
+
+//注册response
+message RegisterResponse {
+    ResultCode result = 1;
+    bool success = 2;   //判断rpc执行成功还是执行失败
+}
+
+//定义服务,包含登陆、注册两个RPC方法
+service UserServiceRPC {
+    rpc Login (LoginRequest) returns (LoginResponse);
+    rpc Register (RegisterRequest) returns (RegisterResponse);
+}
